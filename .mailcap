@@ -1,0 +1,6 @@
+text/html; $HOME/src/scripts/mutt/launch-browser.sh %s &;
+text/html; w3m -dump -T text/html; copiousoutput
+text/*; less; copiousoutput
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; libreoffice %s;
+application/pdf; zathura %s;
+image/*; ristretto %s;

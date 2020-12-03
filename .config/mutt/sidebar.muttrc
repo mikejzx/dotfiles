@@ -1,0 +1,27 @@
+# Sidebar stuff.
+set sidebar_visible         = yes
+set sidebar_width           = 28
+set sidebar_short_path      = yes
+set sidebar_component_depth = 0
+set sidebar_delim_chars     = '/.'
+set sidebar_folder_indent   = yes
+set sidebar_indent_string   = '  '
+set sidebar_new_mail_only   = no
+set sidebar_next_new_wrap   = yes
+set sidebar_on_right        = no
+set sidebar_divider_char    = ' '
+set sidebar_sort_method     = 'unsorted'
+set sidebar_format          = '%D%?F? [%F]?%* %?N?%N/? %?S?%S? '
+
+# Sidebar mappings
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Cp sidebar-prev-new
+bind index,pager \Cn sidebar-next-new
+bind index,pager B sidebar-toggle-visible
+
+set mail_check_stats
+set sidebar_non_empty_mailbox_only = no
+set sidebar_new_mail_only = no
+set sidebar_on_right = yes

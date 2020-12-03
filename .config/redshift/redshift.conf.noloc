@@ -1,0 +1,15 @@
+[redshift]
+temp-day=6500K
+temp-night=3800K
+transition=0
+gamma-day=1.0
+gamma-night=1.4
+brightness-day=1.0
+brightness-night=0.7
+
+location-provider=manual
+method=randr
+
+; [manual]
+; lat=
+; lon=

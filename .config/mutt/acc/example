@@ -1,0 +1,21 @@
+#
+# Example configuration of an account.
+#
+
+# Set colour.
+color status green default
+
+# Set name.
+set from     = "bob@example.com"
+set realname = "Bob Smith"
+
+# SMTP.
+set sendmail = "$HOME/src/scripts/mutt/outbox/queue -a example"
+
+# Set up maildir.
+set mbox_type = Maildir
+set folder    = "~/mail/"
+set spoolfile = "notmuch://?query=folder:example/Inbox"
+set postponed = "+example/Drafts"
+unset record
+unset trash

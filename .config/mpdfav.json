@@ -1,0 +1,11 @@
+{
+	"PlaycountsEnabled": true,
+	"MostPlayedPlaylistName": "Most Played",
+	"MostPlayedPlaylistLimit": 0,
+	"RatingsEnabled": false,
+	"BestRatedPlaylistName": "Best Rated",
+	"BestRatedPlaylistLimit": 0,
+	"MPDHost": "127.0.0.1",
+	"MPDPort": 6600,
+	"MPDPassword": ""
+}

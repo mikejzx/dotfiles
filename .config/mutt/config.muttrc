@@ -1,0 +1,35 @@
+# Date format and attribution.
+set date_format = "!%A, %b %d, %Y at %H:%M:%S %Z"
+set attribution = "On %d, %n <%a> wrote:"
+
+# Index formats (a bit complex...)
+set index_format = "%4C %Z %<[w?%<[2d?%<[d?%<[20M?%<[10M?Just now       &15 minutes ago >&Today     %[%H:%M]>&Yesterday %[%H:%M]>&%-9.9[%A] %[%H:%M]>&%[%d.%m.%y  %H:%M]> %-30.30L (%?l?%4l&%4c?) %s"
+
+# Folder format.
+set folder_format="%2C %t %N %8s %d %f"
+
+# Automatically view HTML and plaintext in the pager.
+auto_view text/html text/plain
+
+# Show pager below index.
+#set pager_index_lines = 16
+
+# Other
+set   move              = no
+set   imap_keepalive    = 900
+set   sort              = date
+color progress white red
+
+# Address auto-complete using notmuch
+set query_command = 'echo "" && notmuch address --output=address from:%s |\
+	uniq | sed "/noreply/d;/no-reply/d;/+canned.response/d"'
+set query_format  = "%4c %t %-70.70a %-70.70n %?e?(%e)?"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+# All other config.
+source sidebar.muttrc
+source misc.muttrc
+source colours.muttrc
+source contacts.muttrc
+set alias_file=contacts.muttrc

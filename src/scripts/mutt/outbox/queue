@@ -1,0 +1,3 @@
+#!/bin/sh
+$HOME/src/scripts/mutt/outbox/msmtp-enqueue.sh "$@"
+$HOME/src/scripts/mutt/notmuch-hook.sh

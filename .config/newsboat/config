@@ -1,0 +1,28 @@
+
+# External browser
+browser /usr/bin/brave-browser-nightly %u
+
+# Don't save search history
+history-limit 0
+
+# Unbind keys.
+unbind-key ENTER
+unbind-key j
+unbind-key k
+unbind-key J
+unbind-key K
+
+# Bind Vim-style keys.
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+
+# Highlights
+highlight article "^(Title):.*$" blue default
+highlight article "https?://[^ ]+" red default
+highlight article "\\[image\\ [0-9]+\\]" green default
+
+# Other stuff.
+always-display-description yes
+datetime-format "%a, %b %d, %Y"

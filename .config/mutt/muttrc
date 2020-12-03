@@ -1,0 +1,90 @@
+#
+# muttrc
+#
+# Yes, this is a huge mess. I mean, it works at least.
+#
+
+# Set folder hooks to source respective file from 'acc' directory.
+source hooks.muttrc
+
+# Load other ugly config.
+source config.muttrc
+
+# Status bar on top.
+set status_on_top = yes
+
+# Main folders.
+set folder = "~/mail/"
+
+set editor = nvim
+
+# Notmuch
+set nm_default_url = "notmuch://$HOME/mail"
+set nm_db_limit = 0
+set nm_open_timeout = 5
+set nm_query_type = messages
+set nm_record = no
+set nm_unread_tag = unread
+set virtual_spoolfile = no
+
+# MAILBOXES: Local
+virtual-mailboxes "─────────────────────────────" "notmuch://"
+virtual-mailboxes "Unread e-mail" "notmuch://?query=tag:unread"
+virtual-mailboxes "Outbox"        "notmuch://?query=tag:outbox"
+virtual-mailboxes "Drafts"        "notmuch://?query=tag:draft"
+
+# MAILBOXES: ProtonMail
+virtual-mailboxes "1 skec"    "notmuch://$HOME/mail/pm"
+virtual-mailboxes "  Inbox"   "notmuch://?query=folder:pm/INBOX"
+virtual-mailboxes "  Sent"    "notmuch://?query=folder:pm/Sent"
+virtual-mailboxes "  Junk"    "notmuch://?query=folder:pm/Junk"
+virtual-mailboxes "  Rubbish" "notmuch://?query=folder:pm/Rubbish"
+
+# Source all other mailboxes.
+source acc/gmail0-mailboxes
+source acc/gmail-mailboxes
+source acc/school-mailboxes
+
+# Load into ProtonMail box by default.
+source acc/pm
+
+# Other bindings.
+bind index,pager g noop
+bind index gg first-entry
+macro index gu "<change-folder>Unread e-mail<enter>" "Folder: Unread"
+macro index go "<change-folder>Outbox<enter>"        "Folder: Outbox"
+
+# Sync mail bindings.
+# P -> ProtonMail.
+# p -> Other Mail.
+# O Sync everything and send.
+# o Send all from Outbox.
+bind  index o noop
+bind  index O noop
+bind  index p noop
+bind  index P noop
+macro index P "<shell-escape>offlineimap -c $HOME/.config/offlineimaprc && $HOME/src/scripts/mutt/notmuch-hook.sh<enter><change-folder>!<enter>"
+macro index p "<shell-escape>$HOME/src/scripts/mutt/mailsync-other.sh<enter><change-folder>!<enter>"
+macro index O "<shell-escape>offlineimap -c ~/.config/offlineimaprc; $HOME/src/scripts/mutt/mailsync-other.sh; $HOME/src/scripts/mutt/outbox/msmtp-runqueue.sh<enter><change-folder>!<enter>"
+macro index o "<shell-escape>$HOME/src/scripts/mutt/outbox/msmtp-runqueue.sh<enter><change-folder>!<enter>"
+
+# Binding for address changes.
+bind  index,pager i noop
+macro index,pager i1 '<sync-mailbox><enter-command>source ~/.config/mutt/acc/pm    <enter><change-folder>!<enter>' ""
+macro index,pager i2 '<sync-mailbox><enter-command>source ~/.config/mutt/acc/gmail0<enter><change-folder>!<enter>' ""
+macro index,pager i3 '<sync-mailbox><enter-command>source ~/.config/mutt/acc/gmail <enter><change-folder>!<enter>' ""
+macro index,pager i4 '<sync-mailbox><enter-command>source ~/.config/mutt/acc/school<enter><change-folder>!<enter>' ""
+
+# Status line for terminal.
+set ts_enabled = yes
+set ts_status_format = "Mutt%?n? (%n)?"
+
+# Formats with different padding chars
+set status_chars = "─*%A"
+set compose_format = "─── NeoMutt - Compose [%l]%>─"
+set status_format  = "─%r─ NeoMutt - %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]───%>─(%P)───"
+set pager_format = "─── %n - %s %*─(%P)───"
+#set pager_format = "-%Z- %C/%m: %-20.20n   %s%*  -- (%P)"
+
+# UTF-8 encoding
+set charset = "utf-8"
