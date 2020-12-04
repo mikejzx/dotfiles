@@ -38,6 +38,8 @@ alias :q="exit"
 alias :qa="exit"
 alias pacman-cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
+export EDITOR=nvim
+
 # Dotfiles config
 alias dfls='/usr/bin/git --git-dir=$HOME/src/dotfiles/ --work-tree=$HOME'
 

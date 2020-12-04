@@ -69,8 +69,7 @@ Mod4 Q :Close
 Mod1 F5 :Kill
 Mod1 F11 :Fullscreen
 Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopLeft}
-#Mod4 Right :MacroCmd {MoveTo 0% 0% TopRight} {ResizeTo 50% 100%}
-Mod4 Right :MacroCmd {If {Matches (Maximized=yes)} {Maximize}} {ResizeTo 50% 100%} {MoveTo 0% 0% TopRight}
+Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopRight}
 Mod4 Up :Maximize
 Mod4 Down :If {Matches (Maximized=yes)} {Maximize} {Minimize}
 Mod1 Shift N :Exec $HOME/src/scripts/misc/move-to-next-monitor.sh
