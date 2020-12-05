@@ -35,5 +35,10 @@
       [exec] (About) {(fluxbox -v; fluxbox -info | sed 1d) | xmessage -file - -center}
 [end]
       [exit] (Exit Fluxbox)
+      [separator]
+[submenu] (Power)
+      [exec] (Shutdown) {poweroff}
+      [exec] (Reboot) {reboot}
+[end]
 [endencoding]
 [end]

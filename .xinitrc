@@ -28,6 +28,9 @@ setxkbmap -option caps:swapescape &
 # Turn on numlock if it's not on yet
 numlockx on &
 
+# Allows us to use some bound multimedia keys
+xbindkeys &
+
 # Start the GPU fan controller.
 gpu-fancurve &
 

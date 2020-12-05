@@ -14,7 +14,6 @@ xsetroot -solid black &
 nitrogen --restore &
 redshift -c ~/.config/redshift/redshift.conf &
 xautolock -time 15 -locker "i3lock-fancy-dualmonitor" &
-xbindkeys &
 (sleep 1 && picom-tryone --experimental-backends --config ~/.config/picom.conf --blur-method dual_kawase --blur-strength 4) &
 (sleep 2 && tint2 -c ~/.config/tint2/tint2rc-left) &
 (sleep 2 && tint2 -c ~/.config/tint2/tint2rc-right) &
