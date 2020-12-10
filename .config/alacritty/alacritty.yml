@@ -105,8 +105,8 @@ font:
     #family: 'DejaVu Sans Mono'
     #family: 'Terminus'
     #family: 'Gohufont'
-    family: 'Jetbrains Mono'
-    #family: 'FiraCode'
+    #family: 'Jetbrains Mono'
+    family: 'FiraCode'
     #family: 'Fixedsys Excelsior 3.01-L2 Mono'
     #family: monospace
 
@@ -185,7 +185,7 @@ colors:
   # Default colors
   primary:
       #background: "0x0c0e14"
-    background: '#000000'
+    background: '#101010'
     foreground: '#dddddd'
 
   # Normal colors

@@ -5,6 +5,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 
+" Colour schemes
 " Plug 'NLKNguyen/papercolor-theme'
 " Plug 'Rigellute/shades-of-purple.vim'
 " Plug 'dracula/vim'
@@ -17,16 +18,24 @@ call plug#begin('~/.vim/plugged')
 " Plug 'sainnhe/forest-night'
 " Plug 'tomasr/molokai'
 Plug 'bignimbus/pop-punk.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'nanotech/jellybeans.vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'humanoid-colors/vim-humanoid-colorscheme'
+
+" Actual plugins
+Plug 'RRethy/vim-illuminate'
+Plug 'itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
 " Lightline colorscheme. We don't need to show mode anymore too.
 " let g:shades_of_purple_lightline = 1
 let g:lightline = {
-	\ 'colorscheme': 'pop_punk',
+	\ 'colorscheme': 'jellybeans',
 	\ 'active': {
 	\   'right': [ [ 'lineinfo' ],
 	\              [ 'percent' ],
@@ -35,6 +44,12 @@ let g:lightline = {
 	\ }
 set noshowmode
 
+" Rainbow brackets on
+let g:rainbow_active = 1
+
+" Disable rainbow brackets and illuminate on .txt files.
+autocmd BufRead,BufNewFile *.txt RainbowToggle
+let g:Illuminate_ftblacklist = ['text']
 
 " Colour-scheme specifics
 let g:solarized_italics = 0
@@ -45,10 +60,14 @@ let g:gruvbox_number_column = "dark0"
 let g:gruvbox_vert_split = "dark0"
 
 " Colour setup
-set t_Co=256
-set termguicolors
 set background=dark
-colorscheme pop-punk
+if exists('+termguicolors')
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
+endif
+set t_Co=256
+colorscheme jellybeans
 
 " Line numbers.
 set tabstop=4
@@ -68,6 +87,9 @@ map <C-l> <C-w>l
 
 " Delete trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
+
+" Show indent guide
+" set list lcs=tab:\+\
 
 " Make sp/vs work a bit nicer.
 set splitbelow splitright

@@ -18,6 +18,8 @@ set folder = "~/mail/"
 
 set editor = nvim
 
+set signature = ""
+
 # Notmuch
 set nm_default_url = "notmuch://$HOME/mail"
 set nm_db_limit = 0

@@ -1,14 +1,25 @@
 # Gradients
-# Gradient 1
+
+# Gradient 1 - panel
 gradient = vertical
 start_color = #404040 55
-color_stop = 50.000000 #4a4a4a 55
-color_stop = 52.000000 #0c0c0c 30
-color_stop = 93.000000 #0a0a0a 30
-color_stop = 94.000000 #ffffff 10
-color_stop = 96.000000 #ffffff 10
-color_stop = 98.000000 #000000 100
+color_stop = 50 #4a4a4a 55
+color_stop = 52 #0c0c0c 30
+color_stop = 93 #0a0a0a 30
+color_stop = 94 #ffffff 10
+color_stop = 96 #ffffff 10
+color_stop = 98 #000000 100
 end_color = #000000 100
+
+# Gradient 2 - active task
+gradient = vertical
+start_color = #15284d 50
+end_color = #3c73dc 50
+
+# Gradient 3 - urgent task
+gradient = vertical
+start_color = #7f461d 50
+end_color = #ff8c3a 50
 
 #-------------------------------------
 # Backgrounds
@@ -45,8 +56,11 @@ border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #777777 20
-border_color = #ffffff 40
+background_color = #000000 0
+gradient_id = 2
+gradient_id_hover = 2
+gradient_id_pressed = 2
+border_color = #6681cc 40
 background_color_hover = #aaaaaa 22
 border_color_hover = #eaeaea 44
 background_color_pressed = #555555 4
@@ -58,8 +72,11 @@ border_width = 1
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #aa4400 100
-border_color = #aa7733 100
+background_color = #000000 0
+gradient_id = 3
+gradient_id_hover = 3
+gradient_id_pressed = 3
+border_color = #ff8c3a 40
 background_color_hover = #cc7700 100
 border_color_hover = #aa7733 100
 background_color_pressed = #555555 4
