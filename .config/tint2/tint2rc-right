@@ -1,15 +1,13 @@
 # Gradients
 
-# Gradient 1 - panel
-gradient = vertical
-start_color = #404040 55
-color_stop = 50 #4a4a4a 55
-color_stop = 52 #0c0c0c 30
-color_stop = 93 #0a0a0a 30
-color_stop = 94 #ffffff 10
-color_stop = 96 #ffffff 10
-color_stop = 98 #000000 100
-end_color = #000000 100
+# Gradient 1 - panel (Flat-ish)
+gradient    =    vertical
+start_color =    #000000 50
+color_stop  = 93 #000000 50
+color_stop  = 94 #404040 50
+color_stop  = 96 #404040 50
+color_stop  = 98 #000000 100
+end_color   =    #000000 100
 
 # Gradient 2 - active task
 gradient = vertical
@@ -29,7 +27,7 @@ border_width = 0
 border_sides = TBLR
 border_content_tint_weight = 0
 background_content_tint_weight = 0
-background_color = #000000 60
+background_color = #000000 0
 border_color = #000000 30
 gradient_id = 1
 background_color_hover = #000000 60
@@ -106,7 +104,7 @@ wm_menu = 1
 panel_dock = 0
 panel_pivot_struts = 0
 panel_position = top center horizontal
-panel_layer = top
+panel_layer = bottom
 panel_monitor = 2
 panel_shrink = 0
 autohide = 0

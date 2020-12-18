@@ -68,12 +68,23 @@ Mod1 F2 :Exec fbrun
 Mod4 Q :Close
 Mod1 F5 :Kill
 Mod1 F11 :Fullscreen
+Mod1 Shift N :Exec $HOME/src/scripts/misc/move-to-next-monitor.sh
+Mod4 A :If {Matches (Layer!=Desktop)} {ArrangeWindowsStackRight (Name!=tint2)}
+
 Mod4 Left :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopLeft}
 Mod4 Right :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopRight}
 Mod4 Up :Maximize
 Mod4 Down :If {Matches (Maximized=yes)} {Maximize} {Minimize}
-Mod1 Shift N :Exec $HOME/src/scripts/misc/move-to-next-monitor.sh
-Mod4 A :If {Matches (Layer!=Desktop)} {ArrangeWindowsStackRight (Name!=tint2)}
+
+Mod1 Shift H :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopLeft}
+Mod1 Shift L :MacroCmd {ResizeTo 50% 100%} {MoveTo 0% 0% TopRight}
+Mod1 Shift K :Maximize
+Mod1 Shift J :If {Matches (Maximized=yes)} {Maximize} {Minimize}
+
+Mod4 H :FocusLeft
+Mod4 J :FocusDown
+Mod4 K :FocusUp
+Mod4 L :FocusRight
 
 # Open the window menu
 Mod1 space :WindowMenu

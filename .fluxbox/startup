@@ -14,7 +14,7 @@ xsetroot -solid black &
 nitrogen --restore &
 redshift -c ~/.config/redshift/redshift.conf &
 xautolock -time 15 -locker "i3lock-fancy-dualmonitor" &
-(sleep 1 && picom-tryone --experimental-backends --config ~/.config/picom.conf --blur-method dual_kawase --blur-strength 4) &
+(sleep 1 && picom-next --config ~/.config/picom.conf --experimental-backends) &
 (sleep 2 && tint2 -c ~/.config/tint2/tint2rc-left) &
 (sleep 2 && tint2 -c ~/.config/tint2/tint2rc-right) &
 
@@ -24,6 +24,7 @@ touch ~/.cache/run-cowsay-login
 (sleep 2 && hydroxide serve) &
 (sleep 4 && ~/.local/share/go/bin/mpdfavd -config-file ~/.config/mpdfav.json) &
 (sleep 3 && ~/src/scripts/getweather.sh) &
+(sleep 3 && ~/src/scripts/sync-playcounts.sh) &
 
 # And last but not least we start fluxbox.
 exec fluxbox -no-toolbar

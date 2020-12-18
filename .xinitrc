@@ -34,6 +34,9 @@ xbindkeys &
 # Start the GPU fan controller.
 gpu-fancurve &
 
+# Start gpg agent
+gpg-agent &
+
 # Try fix Vsync
 export __GL_SYNC_TO_VBLANK=1
 
