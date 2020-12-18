@@ -179,3 +179,7 @@ if &term =~ '^screen'
     execute "set <xLeft>=\e[1;*D"
 endif
 
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight LineNr ctermbg=NONE guibg=NONE
+highlight VertSplit ctermbg=NONE guibg=NONE
